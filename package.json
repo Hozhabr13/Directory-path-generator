@@ -37,11 +37,13 @@
     ]
   },
   "lint-staged": {
-    "*.ts": "lint:fix"
+    "src/**/*.{ts,css,html}": [
+        "npm run lint:fix"
+    ]
   },
   "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint:fix"
+      "hooks": {
+          "pre-commit": "lint-staged"       
     }
   },
   "devDependencies": {
