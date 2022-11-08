@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { useSelector } from 'react-redux'
 import './App.css'
-import { todosData } from './app/selectors'
+import { todosData } from './app/service/selectorsHook'
 
 const App: FC = () => {
   const sampleData = useSelector(todosData)
