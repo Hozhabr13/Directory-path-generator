@@ -1,11 +1,19 @@
-import React, { FC } from 'react'
-import { useSelector } from 'react-redux'
+import React, { FC, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import './App.css'
-import { todosData } from './app/service/selectorsHook'
+import { todosData } from './service/selectorsHook'
+import { fetchTodos } from './store/todos'
 
 const App: FC = () => {
   const sampleData = useSelector(todosData)
-  console.log(sampleData)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchTodos())
+  }, [])
+
+  console.log('sampleData', sampleData)
+
   return (
     <div className="App">
       <header className="App-header">
