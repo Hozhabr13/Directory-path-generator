@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import './App.css'
-import { todosData } from './service/selectorsHook'
+import { todosData } from './services/selectorsHook'
 import { fetchTodos } from './store/todos'
 
 const App: FC = () => {
